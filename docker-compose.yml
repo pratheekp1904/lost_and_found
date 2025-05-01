@@ -19,6 +19,7 @@ services:
     environment:
       - NODE_ENV=production
       - MONGO_URI=${MONGO_URI}
+      - SECRETKEY=${SECRETKEY}  # Add this line
     volumes:
       - ./server:/app
     restart: unless-stopped
