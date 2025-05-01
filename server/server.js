@@ -74,7 +74,7 @@ app.use(errorHandler);
 app.use(express.json()); 
 
 // Start our server
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
