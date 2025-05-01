@@ -28,43 +28,35 @@ const signup = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-    // get the email and password off req body
     const { email, password } = req.body;
-
-    // find the user with the requested email
-    const user = await User.findOne({ email: email });
-
+    if (!email || !password) {
+      return res.status(400).json({ message: 'Email and password are required' });
+    }
+    const user = await User.findOne({ email });
     if (!user) {
-      return res.sendStatus(401);
+      return res.status(401).json({ message: 'Invalid credentials' });
     }
-
-    // compare sent-in password with the found user password hash
     const passwordMatch = bcrypt.compareSync(password, user.password);
-
     if (!passwordMatch) {
-      return res.sendStatus(401);
+      return res.status(401).json({ message: 'Invalid credentials' });
     }
-
-    // create a jwt token
+    if (!process.env.SECRETKEY) {
+      throw new Error('SECRETKEY environment variable is not defined');
+    }
     const expirationTime = Date.now() + 1000 * 60 * 60 * 24 * 30;
-    const token = jwt.sign({ sub: user._id, expirationTime: expirationTime }, process.env.SECRETKEY);
-
-    // set the cookie
+    const token = jwt.sign({ sub: user._id, expirationTime }, process.env.SECRETKEY);
     res.cookie("Authorization", token, {
       expires: new Date(expirationTime),
       httpOnly: true,
       sameSite: 'lax',
       secure: process.env.NODE_ENV === "production"
     });
-
-    // send it
     res.json({ token });
   } catch (error) {
-    // Handle errors here
     console.error("Error during login:", error);
-    res.status(500).send("Internal Server Error");
+    res.status(500).json({ message: `Internal Server Error: ${error.message}` });
   }
-}
+};
 
 const logout = (req, res) => {
   try {
