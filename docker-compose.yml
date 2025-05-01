@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: client/Dockerfile
     ports:
-      - "3000:80"  # React app via Nginx
+      - "3000:3000"  # React app via Nginx
     depends_on:
       - server
 
