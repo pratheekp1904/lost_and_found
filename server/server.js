@@ -33,13 +33,13 @@ app.use(bodyParser.json({ limit: "500mb" }));
 app.use(bodyParser.urlencoded({ limit: "500mb", extended: true }));
 app.use(cookieParser());
 
+// CORS configuration to allow requests from your client
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://yourdomain.com"],
-    credentials: true,
+    origin: ["http://13.61.63.5:3000", "http://localhost:3000", "https://yourdomain.com"], // Allow these origins
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );
-
 
 // Connect to the database
 connectToMongo();
