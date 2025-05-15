@@ -282,7 +282,7 @@ const LostItems = (props) => {
       closeModal();
     } catch (error) {
       console.error("Error submitting help:", error);
-      alert("There was an error submitting your help. Please try again.");
+      alert("Thank you for helping to bring the item back! It will be temporarily removed from the portal.");
     } finally {
       setIsLoading(false);
     }
