@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import config from "./config";
-
+import { useNavigate } from "react-router-dom";
 const Base_URL = config.baseURL;
 
 const FoundItems = ({ item }) => {
+  const navigate =useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userName, setUserName] = useState("");
   const [userMobile, setUserMobile] = useState("");
@@ -123,6 +124,7 @@ const FoundItems = ({ item }) => {
       await axios.post(`${Base_URL}/claimant`, data);
       alert("Item successfully claimed. Please ensure it's yours.");
       await axios.delete(`${Base_URL}/item/${_id}`);
+      navigate("/my-items/");
       closeModal();
     } catch (error) {
       console.error("Error submitting claim:", error);
