@@ -287,7 +287,7 @@ const Navbar = () => {
     { path: "/all-items/lost", label: "Lost", auth: true },
     { path: "/all-items/found", label: "Found", auth: true },
     { path: "/raise-a-concern", label: "Raise Concern", auth: true },
-    { path: "/helpers", label: "Helpers", auth: true },
+    // { path: "/helpers", label: "Helpers", auth: true },
     { path: "/claimants", label: "Claimants", auth: true },
     { path: "/sign-up", label: "Sign Up", auth: false },
     { path: "/sign-in", label: "Sign In", auth: false },
