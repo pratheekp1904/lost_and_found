@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import config from "./config";
 import Spinner from "./Spinner";
+import {useNavigate} from "react-router-dom";
 
 const Base_URL = config.baseURL;
 
 const DisplayPersonalItems = ({ item }) => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -14,6 +16,7 @@ const DisplayPersonalItems = ({ item }) => {
     try {
       await axios.delete(`${Base_URL}/item/${_id}`, { withCredentials: true });
       alert("Item has been successfully removed!");
+      navigate("/my-items/");
     } catch (error) {
       console.error("Error deleting item:", error);
     } finally {
