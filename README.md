@@ -24,14 +24,14 @@ In campus environments, lost belongings are a common challenge. This web-based L
 
 ## 🔧 Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript (or framework used)
-- **Backend**: Node.js / Python / (your backend choice)
-- **Database**: MongoDB / MySQL / PostgreSQL
+- **Frontend**: HTML, CSS, JavaScript, React
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
 - **DevOps**:  
   - **Version Control**: GitHub  
   - **CI/CD**: Jenkins  
-  - **Containerization**: Docker  
-  - **Monitoring & Alerts**: Prometheus / Grafana / (if used)
+  - **Containerization**: Docker
+  - **Server**: AWS EC2
 
 ---
 
