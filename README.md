@@ -67,3 +67,27 @@ http://13.61.63.5:3000/
 Due to the possibility of **AWS account suspension**, the live deployment of this application may not be accessible at this time.
 
 To demonstrate the functionality and user experience, **key features are shown through screenshots**.
+
+AWS EC2 instances;
+![AWS EC2 instances](assets/aws/ec2/instances.png)
+
+Jenkins Pipeline;
+![Jenkins Pipeline](assets/jenkins_pipeline.png)
+
+Home Page;
+![Home Page](assets/home_page.png)
+
+Successful Login;
+![Login Successful](assets/login_successful.png)
+
+Items Lost;
+![Items Lost](assets/items_lost.png)
+
+Items Found;
+![Items Found](assets/items_found.png)
+
+Report Items;
+![Report Items](assets/report_items.png)
+
+Claimants List;
+![Claimants List](assets/claimants_list.png)
