@@ -59,3 +59,11 @@ This project integrates DevOps practices from the ground up:
 
 You can access the web application here:
 http://13.61.63.5:3000/
+
+---
+
+## ⚠️ Important Notice
+
+Due to the possibility of **AWS account suspension**, the live deployment of this application may not be accessible at this time.
+
+To demonstrate the functionality and user experience, **key features are shown through screenshots**.
