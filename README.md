@@ -68,7 +68,7 @@ Due to the possibility of **AWS account suspension**, the live deployment of thi
 
 To demonstrate the functionality and user experience, **key features are shown through screenshots**.
 
-AWS EC2 instances;
+AWS EC2 instance;
 ![AWS EC2 instances](assets/aws_ec2_instances.png)
 
 Jenkins Pipeline;
